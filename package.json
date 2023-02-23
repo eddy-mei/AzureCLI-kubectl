@@ -1,0 +1,21 @@
+{
+  "name": "AzureCLI-kubectl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-kubectl": "gcloud components install kubectl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddy-mei/AzureCLI-kubectl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddy-mei/AzureCLI-kubectl/issues"
+  },
+  "homepage": "https://github.com/eddy-mei/AzureCLI-kubectl#readme"
+}

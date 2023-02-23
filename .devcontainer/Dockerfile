@@ -21,12 +21,19 @@ RUN bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "$
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-RUN sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+#RUN sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 #RUN sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256" \
 #    && echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 
-RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+#RUN sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-RUN sudo chmod +x kubectl 
-RUN sudo mkdir -p ~/.local/bin 
-RUN sudo mv ./kubectl ~/.local/bin/kubectl
+#RUN sudo chmod +x kubectl 
+#RUN sudo mkdir -p ~/.local/bin 
+#RUN sudo mv ./kubectl ~/.local/bin/kubectl
+
+RUN cd ~ \
+    && sudo wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-arm.tar.gz \
+    && tar -zxvf google-cloud-cli-395.0.0-linux-arm.tar.gz
+    
+RUN apt update 
+RUN apt install -y nodejs npm
